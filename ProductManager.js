@@ -1,9 +1,11 @@
+const fs = require('fs')
 class ProductManager{
     static lastID=0
     constructor(){
-         this.products=[];
+         this.products=[]
+         this.path
     
-    addProduct(title, description, price, thumbnail, code,stock); {
+    addProduct(title, description, price, thumbnail, code,stock) {
         let newProduct={
             title: title,
             description: description,
@@ -13,11 +15,11 @@ class ProductManager{
             stock: stock,
             id: ++ProductManager.lastID,
         }
-        console.log (newProduct);
+        console.log (newProduct)
         if (products.includes(this.code)){
             console.log("Error! Code already exists. Please replace code.")
             }
-         else{products.push(newProduct);}
+         else{products.push(newProduct)}
     }
 
     getProducts();{
@@ -32,7 +34,7 @@ class ProductManager{
         }
     }
     getProductById(id);{
-        const product = this.products.find(product=> product.id===id)
+        const product = this.products.some(product=> product.id===id)
         if (product){
             console.log(`Product Found - ID: ${product.id}, Title: ${product.title}, Price: $${product.price.toFixed(2)}, Stock: ${product.stock}`)
         } 
