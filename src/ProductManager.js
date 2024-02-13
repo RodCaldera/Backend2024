@@ -1,3 +1,5 @@
+import express from express
+const app = express
 const fs = require('fs')
 .fswriteFileSync('products.json', "Catálogo de Productos")
 
@@ -63,3 +65,4 @@ let newProduct = new ProductManager();
 
 newProduct.addProduct("Producto Prueba", "Este es un producto prueba", 200, "Sin imagen", "abc123", 25)
 
+export default app;
