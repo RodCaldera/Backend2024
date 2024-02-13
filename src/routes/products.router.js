@@ -28,19 +28,23 @@ router.get('/:pid', (req,res)=>{
 )
 
 router.post('/', (req,res)=>{
+    //product.id = Math.floor(Math.random()*100+1)
     let newProduct={
-        title:String,
-        description: String, 
-        price: Number,
-        status: Boolean,
-        Stock: Number,
-        Category: String,
-        thumbnail: Array,
-        code: String
+        title: req.body.title,
+        description: req.body.description, 
+        price: req.body.price,
+        status: req.body.status,
+        stock: req.body.stock,
+        category: req.body.category,
+        thumbnail: req.body.thumbnail,
+        code: req.body.code
         id: // add random id
     }
-    let product = request.body
-    product.id = Math.floor(Math.random()*100+1)
+
+    products.push(newProduct)
+    res.json(products)
+    
+    
 })
 
 router.put('/', (req,res)=>{})
